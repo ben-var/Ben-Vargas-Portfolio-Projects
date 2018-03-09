@@ -1,0 +1,47 @@
+Please enter the number of terms that will be in this polynomial: 5
+------Input for Term #1------
+Please enter the coefficient of this term: -4
+Please enter the degree exponent of this term: 9
+Current Polynomial: (-4)x^9
+
+------Input for Term #2------
+Please enter the coefficient of this term: 0
+Please enter the degree exponent of this term: 13
+Current Polynomial: 0x^13 + (-4)x^9
+
+------Input for Term #3------
+Please enter the coefficient of this term: 15
+Please enter the degree exponent of this term: 0
+Current Polynomial: 0x^13 + (-4)x^9 + 15
+
+------Input for Term #4------
+Please enter the coefficient of this term: 4
+Please enter the degree exponent of this term: 1
+Current Polynomial: 0x^13 + (-4)x^9 + 4x + 15
+
+------Input for Term #5------
+Please enter the coefficient of this term: 1
+Please enter the degree exponent of this term: 2
+Current Polynomial: 0x^13 + (-4)x^9 + x^2 + 4x + 15
+
+Please enter the number of terms that will be in this polynomial: 3
+------Input for Term #1------
+Please enter the coefficient of this term: -2
+Please enter the degree exponent of this term: 13
+Current Polynomial: (-2)x^13
+
+------Input for Term #2------
+Please enter the coefficient of this term: 100
+Please enter the degree exponent of this term: 0
+Current Polynomial: (-2)x^13 + 100
+
+------Input for Term #3------
+Please enter the coefficient of this term: 5
+Please enter the degree exponent of this term: 6
+Current Polynomial: (-2)x^13 + 5x^6 + 100
+
+----------Demonstration of Adding Polynomials-------------------
+          (0x^13 + (-4)x^9 + x^2 + 4x + 15)
+        + ((-2)x^13 + 5x^6 + 100)
+----------------------------------------------------------------
+        =  (-2)x^13 + (-4)x^9 + 5x^6 + x^2 + 4x + 115
