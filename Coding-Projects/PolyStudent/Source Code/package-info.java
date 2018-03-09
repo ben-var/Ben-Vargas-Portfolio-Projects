@@ -28,7 +28,7 @@
 /**
  * @author Ben Vargas, some parts from Koffman & Wolfgang
  * @version 1.0
- * 
+ *
  * last edited 9/17/2017
  */
-package edu.miracosta.cs113;
+// package name redacted

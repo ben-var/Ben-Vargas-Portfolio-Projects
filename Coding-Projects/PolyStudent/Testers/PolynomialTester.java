@@ -1,7 +1,7 @@
 package testers;
 
-//import statement used when source code was in package - no longer needed.
-import edu.miracosta.cs113.*;
+
+// package name redacted - previously needed to import source code
 
 /**
  * Tester class to test various Polynomial, Term, and FirstArrayList methods
@@ -97,5 +97,5 @@ public class PolynomialTester {
 
 		return p3;
 	}
-	
+
 }

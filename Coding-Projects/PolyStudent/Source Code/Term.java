@@ -1,4 +1,4 @@
-package edu.miracosta.cs113;
+// package name redacted
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

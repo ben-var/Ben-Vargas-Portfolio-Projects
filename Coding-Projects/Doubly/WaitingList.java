@@ -1,9 +1,9 @@
-// package name redacted
+//package name redacted
 
 import java.util.List;
 
 /**
- * Simple example use of SingleLinkedList data structure
+ * Simple example use of BVDoublyLinkedList data structure
  * build in this folder. Simulates a waiting list for a
  * course enrollment, for Student objects (Last Name, First Name)
  * <p>
@@ -20,12 +20,13 @@ import java.util.List;
  * 5. takeStudentByName() - removes student of specified name from list
  *
  * @author Ben Vargas
- * @version 1.1
+ * @version 1.2
  *
  */
 public class WaitingList {
 	//INITIALIZING/DECLARING VARIABLES
-	private List<Student> waitingList = new SingleLinkedList<Student>();
+
+	private List<Student> waitingList = new BVDoublyLinkedList<Student>();
 	private String course;
 
 	//STANDARD TOSTRING
@@ -34,6 +35,7 @@ public class WaitingList {
 		String toReturn = course + " as of now "
 				+ "(size = " + this.size() + "): \n";
 		toReturn += waitingList;
+
 		return toReturn;
 	}
 
@@ -44,7 +46,7 @@ public class WaitingList {
 	}
 
 	/** Full constructor */
-	public WaitingList(String courseName)	{
+	public WaitingList(String courseName) {
 		this.course = courseName;
 	}
 
@@ -55,18 +57,18 @@ public class WaitingList {
 
 	/** Copy constructor */
 	public WaitingList(WaitingList other) {
-		this.waitingList = new SingleLinkedList<Student>((SingleLinkedList<Student>) other.passList());
+		this.waitingList = new BVDoublyLinkedList<Student>((BVDoublyLinkedList<Student>) other.passList());
 		this.course = other.getCourse();
 	}
 
 	//GETTERS
 
-	public String getCourse()	{
+	public String getCourse() {
 		return this.course;
 	}
 
 	//special getter that lets waitingList have convention of a list structure
-	public int size()	{
+	public int size() {
 		return waitingList.size();
 	}
 
@@ -76,9 +78,15 @@ public class WaitingList {
 	}
 
 	/** Test for equivalence to another WaitingList object */
-	public boolean equals(WaitingList other) {
-		return(this.course == other.getCourse()
-				&& waitingList.equals(other.passList()));
+	@Override
+	public boolean equals(Object other) {
+		if(!(other instanceof WaitingList)) {
+			return false;
+		}
+
+		other = (WaitingList) other;
+		return (this.course == ((WaitingList) other).getCourse()
+				&& waitingList.equals(((WaitingList) other).passList()));
 	}
 
 	/**
@@ -87,7 +95,7 @@ public class WaitingList {
 	 * 			Student to be added to the list
 	 */
 	public void addToBack(Student inStudent) {
-		waitingList.add(waitingList.size(), inStudent);
+		waitingList.add(inStudent);
 	}
 
 	/**
@@ -95,7 +103,7 @@ public class WaitingList {
 	 * @param inStudent
 	 * 			Student to be added to the list
 	 */
-	public void letStudentCutToFront(Student inStudent)	{
+	public void letStudentCutToFront(Student inStudent) {
 		waitingList.add(0, inStudent);
 	}
 
@@ -113,25 +121,27 @@ public class WaitingList {
 	/**
 	 * Removes first student in line
 	 */
-	public void takeNextStudent()	{
+	public void takeNextStudent() {
 		waitingList.remove(0);
 	}
 
 	/**
 	 * Removes student with specified name
+	 *
 	 * @param inFirst
-	 * 			First name of student to be removed
+	 * 		First name of student to be removed
 	 * @param inLast
-	 * 			Last name of student to be removed
+	 * 		Last name of student to be removed
 	 * @return
-	 * 			TRUE if Student found and removed
-	 * 			<br>
-	 * 			FALSE if Student not found
+	 * 		TRUE if Student found and removed
+	 * 		<br>
+	 * 		FALSE if Student not found
 	 */
-	public boolean takeStudentByName(String inFirst, String inLast)	{
+	public boolean takeStudentByName(String inFirst, String inLast) {
 		Student temp = new Student(inFirst, inLast);
+
 		boolean studentFound = waitingList.remove(temp);
-		if(studentFound) {
+		if (studentFound) {
 			return true;
 		}
 		return false;

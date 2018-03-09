@@ -1,10 +1,10 @@
-// package name redacted
+//package name redacted
 
 /**
- * Simple Student model object that stores a first and last name
+ * Simple Student object that stores a first and last name
  *
  * @author Ben Vargas
- * @version 1.0
+ * @version 1.1
  *
  */
 public class Student {
@@ -68,18 +68,19 @@ public class Student {
 	 * overwritten.
 	 * <br>
 	 * This MUST be implemented in this way
-	 * in order for the "SingleLinkedList" list to be set
+	 * in order for the "BVDoublyLinkedList" list to be set
 	 * to the <Student> type. Otherwise, certain methods
-	 * of "SingleLinkedList" will call Object.equals()
+	 * of "BVDoublyLinkedList" will call Object.equals()
 	 * instead of this method.
 	 */
 	@Override
 	public boolean equals(Object other) {
-		if(!(other instanceof Student))	{
+		if (!(other instanceof Student)) {
 			return false;
 		}
+
 		Student otherStudent = (Student) other;
-		return(this.getFirst().equals(otherStudent.getFirst())
+		return (this.getFirst().equals(otherStudent.getFirst())
 				&& this.getLast().equals(otherStudent.getLast()));
 	}
 }

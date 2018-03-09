@@ -1,11 +1,9 @@
-package testers;
-
-// package name redacted for importing source code
+//package name redacted
 
 /**
  * Tester class that tests the following Classes:
  * <br>
- * 1. SingleLinkedList (not all methods tested)
+ * 1. BVDoublyLinkedList (not all methods tested, that would require thorough unit testing)
  * <br>
  * 2. Student
  * <br>
@@ -29,16 +27,18 @@ package testers;
  * 7. Test method to remove Student from beginning of list
  * <br>
  * 8. Test method to remove Student with specified name
+ * <br>
+ * 9. Test various methods on an empty list
  *
  * @author Ben Vargas
- * @version 1.0
+ * @version 1.1
  *
  */
 public class StudentTester {
 	public static void main(String[] args) {
-		//cs113 holds student objects, empty is testing empty SingleLinkedList constructor
+		//cs113 holds student objects, empty is testing empty BVDoublyLinkedList constructor
 		WaitingList cs113 = new WaitingList("CS113 Waiting List");
-		WaitingList empty = new WaitingList();
+		WaitingList empty = new WaitingList("Blank Test List");
 
 		//initializing student objects to be used for WaitingList methods tested below
 		Student s1 = new Student("Jason", "Bourne");
@@ -65,7 +65,7 @@ public class StudentTester {
 		System.out.println("-----Testing Phase 1 Begin-----");
 
 		//testing toString and adding to back of list
-		System.out.println("\n-----Testing toString()-----");
+		System.out.println("\n-----Testing toString() and add() to empty list-----");
 		System.out.println(cs113);
 
 		//testing adding to beginning of list (Requirement 2)
@@ -86,10 +86,6 @@ public class StudentTester {
 		System.out.println("Added Ben Vargas to index location 6 (starting at 0) of line");
 		System.out.println(cs113);
 
-		//test print and constructor for empty list
-		System.out.println("\n-----Testing print of empty list-----");
-		System.out.println(empty);
-
 		//testing removeFirst (Requirement 3)
 		System.out.println("\n-----Testing removal of first element from CS113 List------");
 		System.out.println("Calling 'takeNextStudent()' to remove Kim Jung-Un (good riddens!)");
@@ -102,6 +98,34 @@ public class StudentTester {
 							+ " to remove Elon Musk by name.");
 		cs113.takeStudentByName("Elon", "Musk");
 		System.out.println(cs113);
+
+		//testing for cases with empty list
+
+		//test print and constructor for empty list
+		System.out.println("\n-----Testing print of empty list-----");
+		System.out.println(empty);
+
+		//test add to empty list
+		System.out.println("\n-----Testing add to empty list-----");
+		System.out.println("Adding \"Jonny Bravo\" to empty list and then printing list again");
+		empty.addToBack(new Student("Jonny", "Bravo"));
+		System.out.println(empty);
+
+		//testing remove of list of size 1
+		System.out.println("\n-----Testing remove of list with 1 element (by name)-----");
+		System.out.println("Calling 'takeStudentByName(\"Jonny\",\"Bravo\"), then re-printing list");
+		empty.takeStudentByName("Jonny", "Bravo");
+		System.out.println(empty);
+
+		//testing remove of first element in list of size 1
+		System.out.println("\n-----Testing remove from list with 1 element using"
+				+ " takeNextStudent (remove(0))-----");
+		System.out.println("Adding Jonny Bravo back to list");
+		empty.addToBack(new Student("Jonny", "Bravo"));
+		System.out.println(empty);
+		System.out.println("Calling takeNextStudent()");
+		empty.takeNextStudent();
+		System.out.println(empty);
 
 		//TESTING END
 		System.out.println("\n-----Testing Phase 1 Complete-----");
