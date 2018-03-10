@@ -1,0 +1,36 @@
+-----Testing Phase 1 Begin-----
+
+-----Testing toString()-----
+CS113 Waiting List as of now (size = 7): 
+Shmoe, Joe ==> Obama, Barack ==> Bourne, Jason ==> Musk, Elon ==> Bond, James ==> Winfrey, Oprah ==> Katch'em, Ash
+
+-----Testing add(Student) to front of list-----
+Added Kim Jung-Un to the front of the line.
+CS113 Waiting List as of now (size = 8): 
+Jung-Un, Kim ==> Shmoe, Joe ==> Obama, Barack ==> Bourne, Jason ==> Musk, Elon ==> Bond, James ==> Winfrey, Oprah ==> Katch'em, Ash
+
+-----Testing add(size(), Student)-----
+Added Jessica Alba to back of the line.
+CS113 Waiting List as of now (size = 9): 
+Jung-Un, Kim ==> Shmoe, Joe ==> Obama, Barack ==> Bourne, Jason ==> Musk, Elon ==> Bond, James ==> Winfrey, Oprah ==> Katch'em, Ash ==> Alba, Jessica
+
+-----Testing letStudentCutAtIndex()-----
+Added Ben Vargas to index location 6 (starting at 0) of line
+CS113 Waiting List as of now (size = 10): 
+Jung-Un, Kim ==> Shmoe, Joe ==> Obama, Barack ==> Bourne, Jason ==> Musk, Elon ==> Bond, James ==> Vargas, Ben ==> Winfrey, Oprah ==> Katch'em, Ash ==> Alba, Jessica
+
+-----Testing print of empty list-----
+COURSE NAME NOT SET as of now (size = 0): 
+NULL
+
+-----Testing removal of first element from CS113 List------
+Calling 'takeNextStudent()' to remove Kim Jung-Un (good riddens!)
+CS113 Waiting List as of now (size = 9): 
+Shmoe, Joe ==> Obama, Barack ==> Bourne, Jason ==> Musk, Elon ==> Bond, James ==> Vargas, Ben ==> Winfrey, Oprah ==> Katch'em, Ash ==> Alba, Jessica
+
+-----Testing removal of element at specified index from CS113 List------
+Calling 'takeStudentByName(First, Last)' to remove Elon Musk by name.
+CS113 Waiting List as of now (size = 8): 
+Shmoe, Joe ==> Obama, Barack ==> Bourne, Jason ==> Bond, James ==> Vargas, Ben ==> Winfrey, Oprah ==> Katch'em, Ash ==> Alba, Jessica
+
+-----Testing Phase 1 End-----
