@@ -136,7 +136,7 @@ public class ChangeRecursive {
 	 * 		outer List that stores all unique combinations
 	 */
 	private void giveCombinationsRecursive(double change, int q, int d,
-											int n, int p, List<ArrayList<Integer>> combinations) {
+							int n, int p, List<ArrayList<Integer>> combinations) {
 		if(q == 0 && d == 0 && n == 0 && p == 0) {
 			change = change*100;
 			p = (int) change;
